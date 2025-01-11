@@ -34,22 +34,7 @@ const defaultConfig: PlaywrightTestConfig = {
   ['monocart-reporter', {  
     name: "Test Report",
     outputFile: './test-results/report/index.html',
-    columns: (defaultColumns) => {
-
-      // insert custom column(s) before a default column
-      const index = defaultColumns.findIndex((column) => column.id === 'duration');
-      defaultColumns.splice(index, 0, {
-          // add column for JIRA link
-          id: 'jira',
-          name: 'JIRA Key',
-          width: 100,
-          searchable: true,
-          styleMap: 'font-weight:normal;',
-          formatter: (v, rowItem, columnItem) => {
-              const key = rowItem[columnItem.id];
-              return `<a href="https://jira.intrasoft-intl.com/browse/${key}" target="_blank">${v}</a>`;
-          }
-      });}}]],
+  }]],
   projects: [
     {
       name: browserType.charAt(0).toUpperCase() + browserType.slice(1),
@@ -63,10 +48,10 @@ const defaultConfig: PlaywrightTestConfig = {
 
 // set config for test environment
 const testConfig: EnvConfig = {
-  BASEURL: 'https://practicetestautomation.com/practice-test-login/',
+  BASEURL: 'https://trytestingthis.netlify.app/',
   RESTURL: 'https://reqres.in',
-  USERNAME: 'student',
-  PASSWORD: 'Password123'
+  USERNAME: 'test',
+  PASSWORD: 'test'
 };
 
 // set config for dev environment

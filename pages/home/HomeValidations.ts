@@ -5,17 +5,19 @@ import { Assertion } from "../../utils/common/Assertion";
 export class HomeValidations {
 
     readonly page: Page
-    private homeElements: any
+    private homeElements: HomeElements
     private assertion: Assertion
 
     constructor(page: Page) {
         this.page = page;
-        this.homeElements = new HomeElements(page).getElements
+        this.homeElements = new HomeElements(page)
         this.assertion = new Assertion()
      }
 
-    async verifyWelcomeText() {
-        await this.assertion.isElementVisible(this.homeElements.SUCCESSFULL_LOGIN_TEXT)
+    async verifyPageIsDisplayed() {
+        await this.assertion.isElementVisible(this.homeElements.PAGE_TOP_TITLE)
+        await this.assertion.isElementVisible(this.homeElements.LAYOUT_ONE_TITLE)
+        await this.assertion.isElementVisible(this.homeElements.LAYOUT_TWO_TITLE)
     }
 
 }

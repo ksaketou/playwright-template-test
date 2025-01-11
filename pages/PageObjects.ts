@@ -1,6 +1,7 @@
 import { Page } from "@playwright/test";
 import { Login } from "./login/Login";
 import { Home } from "./home/Home";
+import { LayoutOne } from "./layoutOne/LayoutOne";
 
 export class PageObjects {
 
@@ -16,6 +17,10 @@ export class PageObjects {
 
     public getHomePage() {
         return new Home(this.page)
+    }
+
+    public getLayoutOne() {
+        return new LayoutOne(this.page)
     }
     
 }

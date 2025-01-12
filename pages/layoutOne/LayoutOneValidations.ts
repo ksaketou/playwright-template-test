@@ -38,7 +38,23 @@ export class LayoutOneValidations {
 
     async verifyImageRelocated() {
         await this.assertion.isElementVisible(this.layoutOneElements.FILLED_BOX_TARGET)
-    }    
+    }
+    
+    async verifySuccessfullLoginText() {
+        await this.assertion.isElementVisible(this.layoutOneElements.SUCCESSFULL_LOGIN_TEXT)
+    }
+
+    async verifyInvalidLoginAlert() {
+        this.page.on('dialog', async (dialog) => {
+            if (dialog.type() === "confirm") {
+                await expect(dialog).toContain(getTestData('INVALID_LOGIN_ALERT_TEXT'));
+                await dialog.accept();  // Accepting the alert message
+            } else {
+                console.log('Could not find alert!');
+                await expect(true).toBeFalsy();  // Fail the test if no alert is found
+            }
+        });
+    }
 
 }
 

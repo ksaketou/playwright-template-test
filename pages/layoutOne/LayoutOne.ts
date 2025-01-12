@@ -2,6 +2,7 @@ import { Locator, Page } from "@playwright/test";
 import { Action } from "../../utils/common/Action";
 import { LayoutOneElements } from "./LayoutOneElements";
 import { LayoutOneValidations } from "./LayoutOneValidations";
+import config from "../../playwright.config";
 
 export class LayoutOne {
     readonly page: Page
@@ -23,5 +24,14 @@ export class LayoutOne {
 
     async dragAndDropImage(image: Locator, target: Locator) {
         await this.action.dragAndDrop(image, target)
+    }
+
+    async fillLoginForm(username: string, password: string) {
+        await this.action.input(this.layoutOneElements.USERNAME_INPUT, username)
+        await this.action.input(this.layoutOneElements.PASSWORD_INPUT, password)
+    }
+
+    async clickLoginButton() {
+        await this.action.click(this.layoutOneElements.LOGIN_BUTTON)
     }
 }

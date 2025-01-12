@@ -22,13 +22,13 @@ test.describe("TS_LAYOUT_ONE_002: Login page @login", () =>  {
         await pages.getLayoutOne().validate.verifySuccessfullLoginText()        
     })
 
-    test("TC_001: Login with empty credentials", async () => {           
+    test("TC_002: Login with empty credentials", async () => {           
         await pages.getLayoutOne().fillLoginForm("", "")
         await pages.getLayoutOne().clickLoginButton()
         await pages.getLayoutOne().validate.verifyInvalidLoginAlert()        
     })
 
-    test("TC_001: Login with invalid credentials", async () => {           
+    test("TC_03: Login with invalid credentials", async () => {           
         await pages.getLayoutOne().fillLoginForm(config.USERNAME, getTestData('INVALID_PASSWORD'))
         await pages.getLayoutOne().clickLoginButton()
         await pages.getLayoutOne().validate.verifyInvalidLoginAlert()        

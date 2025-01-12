@@ -9,7 +9,27 @@ export class LayoutOneElements {
     }
 
     public get ALERT_CONFIRMATION_TEXT() {
-        return this.page.locator('text=You Pressed the OK Button!');
+        return this.page.locator('xpath=//p[text()=\'You Pressed the OK Button!\']');
+    }
+
+    public get TOOLTIP_OPTION() {
+        return this.page.locator('css=div.tooltip');
+    }
+
+    public get TOOLTIP_TEXT() {
+        return this.page.locator('css=span.tooltiptext');
+    }
+
+    public get PIZZA_IMAGE() {
+        return this.page.locator('css=#drag1');
+    }
+
+    public get EMPTY_BOX_TARGET() {
+        return this.page.locator('css=#div1');
+    }
+
+    public get FILLED_BOX_TARGET() {
+        return this.page.locator('css=#div1 #drag1');
     }
 
 

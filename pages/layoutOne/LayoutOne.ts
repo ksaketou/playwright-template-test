@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test";
+import { Locator, Page } from "@playwright/test";
 import { Action } from "../../utils/common/Action";
 import { LayoutOneElements } from "./LayoutOneElements";
 import { LayoutOneValidations } from "./LayoutOneValidations";
@@ -19,5 +19,9 @@ export class LayoutOne {
 
     async clickOnAlertButton() {
         await this.action.click(this.layoutOneElements.SAMPLE_ALERT_BUTTON)
+    }
+
+    async dragAndDropImage(image: Locator, target: Locator) {
+        await this.action.dragAndDrop(image, target)
     }
 }

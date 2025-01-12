@@ -2,17 +2,20 @@ import {Page, expect} from '@playwright/test'
 import { LayoutOneElements } from './LayoutOneElements';
 import { Assertion } from "../../utils/common/Assertion";
 import { getTestData } from '../../utils/DataReader';
+import { Action } from '../../utils/common/Action';
 
 export class LayoutOneValidations {
 
     readonly page: Page
     private layoutOneElements: LayoutOneElements
     private assertion: Assertion
+    private action: Action
 
     constructor(page: Page) {
         this.page = page;
-        const homeElements = new LayoutOneElements(page)
+        this.layoutOneElements = new LayoutOneElements(page)
         this.assertion = new Assertion()
+        this.action = new Action()
      }
 
      async verifyAlertText() {
@@ -27,7 +30,15 @@ export class LayoutOneValidations {
             }
         });
     }
-    
+
+    async verifyTooltipText() {
+        await this.action.hover(this.layoutOneElements.TOOLTIP_OPTION)
+        await this.assertion.isElementVisible(this.layoutOneElements.TOOLTIP_TEXT)
+    }
+
+    async verifyImageRelocated() {
+        await this.assertion.isElementVisible(this.layoutOneElements.FILLED_BOX_TARGET)
+    }    
 
 }
 

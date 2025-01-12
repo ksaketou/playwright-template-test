@@ -10,7 +10,7 @@ import fs from 'fs'
 export function getTestData(propertyName: string) : string{
     var PropertiesReader = require('properties-reader');
     var properties = PropertiesReader("./data/"+ getTestSuiteName() +".properties");
-    // console.log(properties.get(propertyName))
+   
     return properties.get(propertyName)
 }
 
@@ -19,8 +19,7 @@ export function getTestData(propertyName: string) : string{
  */
 function getTestSuiteName() {
     var err = new Error();
-    const testSuiteID = err.stack?.substring(err.stack?.indexOf("TS_"),err.stack?.lastIndexOf(".test"))
-    // console.log(testSuiteID)
+    const testSuiteID = err.stack?.substring(err.stack?.lastIndexOf("TS_"),err.stack?.lastIndexOf(".test"))
     return testSuiteID;
 }
 

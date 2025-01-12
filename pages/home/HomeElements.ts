@@ -2,12 +2,11 @@ import { Page } from "@playwright/test";
 
 export class HomeElements {
 
-    constructor(private page: Page) {
-        this.page = page;
-    }
+    constructor(private page: Page) {}
 
-    public getElements = {
-        SUCCESSFULL_LOGIN_TEXT: this.page.getByRole('heading').locator("text='Logged In Successfully'")
-    }     
-     
+    public get PAGE_TOP_TITLE() {return this.page.locator('text=Your Website to practice Automation Testing');}
+
+    public get LAYOUT_ONE_TITLE() {return this.page.locator('text=This is your layout one');}
+
+    public get LAYOUT_TWO_TITLE() {return this.page.locator('text=This is your layout two');}
 }

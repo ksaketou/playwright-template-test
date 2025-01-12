@@ -5,7 +5,7 @@ import { getTestData } from '../../../utils/DataReader';
 
 test.describe.configure({ mode: 'parallel' });
 
-test.describe("TS_LAYOUT_ONE_002: Login page @login", () =>  {
+test.describe("TS_LAYOUT_ONE_002: Login page @UI", () =>  {
     let pages: PageObjects
 
     test.beforeEach("Navigate to demo page",async ({page}) => {

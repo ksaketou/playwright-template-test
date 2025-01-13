@@ -30,4 +30,8 @@ export class LayoutTwoElements {
     public getCheckboxByText(text: string) {
         return this.page.locator("xpath=//input[@type='checkbox' and @name='" + text + "']")
     }
+
+    public getGenderRadioById(id: string) {
+        return this.page.locator("css=#" + id)
+    }
 }

@@ -16,9 +16,22 @@ export class LayoutTwoValidations {
         this.layoutTwoElements = new LayoutTwoElements(page)
         this.assertion = new Assertion()
         this.action = new Action()
-     }
+    }
 
-
+    async verifyGenderRadioChecked(gender: string) {
+        
+        switch(gender.toLowerCase()) {
+            case "male":
+                await this.assertion.isElementChecked(this.layoutTwoElements.getGenderRadioById('male'))
+                break
+            case "female":
+                await this.assertion.isElementChecked(this.layoutTwoElements.getGenderRadioById('female'))
+                break
+            default:
+                await this.assertion.isElementChecked(this.layoutTwoElements.getGenderRadioById('other'))
+                break
+        }
+    }
 
 }
 

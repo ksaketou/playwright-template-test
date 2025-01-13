@@ -43,6 +43,15 @@ export class Assertion {
         await expect(locator).toBeEnabled()
     }
 
+        /**
+     * This method validates if the given checkbox or radio is checked.
+     * 
+     * @param locator the element that is expected to be checked 
+     */
+        async isElementChecked(locator: Locator) {
+            await expect(locator).toBeChecked()
+        }
+
     /**
      * This method validates if an element is not displayed in the User Interface.
      * 

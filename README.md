@@ -3,6 +3,10 @@
 
 This project contains an initial structure of a Test Automation project using Playwright, NodeJS and Typescript. It contains both UI and API tests and related action and validation methods.
 
+Website used for UI testing: https://trytestingthis.netlify.app/
+
+Website used for API testing: https://reqres.in
+
 ### Software Prerequisites
 
 * Node.js (v20+)

@@ -6,7 +6,7 @@ import { LayoutTwoElements } from '../../../pages/layoutTwo/LayoutTwoElements';
 
 test.describe.configure({ mode: 'parallel' });
 
-test.describe("TS_LAYOUT_TWO_001: Form @log", () =>  {
+test.describe("TS_LAYOUT_TWO_001: Form @UI", () =>  {
     let pages: PageObjects
     let layoutTwoElements: LayoutTwoElements
 

@@ -1,4 +1,4 @@
-# Test Automation Project using Playwright & Typescript
+## Test Automation Project using Playwright & Typescript
 
 This project contains an initial structure of a Test Automation project using Playwright, NodeJS and Typescript. It contains both UI and API tests and related action and validation methods.
 

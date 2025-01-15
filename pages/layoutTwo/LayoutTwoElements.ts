@@ -11,17 +11,11 @@ export class LayoutTwoElements {
     public get FEMALE_RADIO_BTN() {return this.page.locator('css=#female');}
     public get OTHER_RADIO_BTN() {return this.page.locator('css=#other');}
 
-    public get OPTION_DROPDOWN() {return this.page.locator('css=#option');}
+    public get OPTION_DROPDOWN_SELECT() {return this.page.locator('css=#option');}
 
-    public get DATA_LIST_INPUT() {return this.page.locator("css=input[list='datalists']");}
-
-    public get FAV_COLOR_INPUT() {return this.page.locator('css=#favcolor');}
-
-    public get DATE_INPUT() {return this.page.locator('css=#day');}
+    public get OPTION_DROPDOWN_SELECT_MULTIPLE() {return this.page.locator('css=#owc');}
 
     public get FILE_UPLOAD_INPUT() {return this.page.locator('css=#myfile');}
-
-    public get QUANTITY_INPUT() {return this.page.locator('css=#quantity');}
 
     public get LONG_MESSAGE_TEXTAREA() {return this.page.locator("css=textarea[name='message']");}
 

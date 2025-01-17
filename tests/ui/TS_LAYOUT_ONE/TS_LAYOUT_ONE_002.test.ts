@@ -29,7 +29,7 @@ test.describe("TS_LAYOUT_ONE_002: Login page @UI", () =>  {
     })
 
     test("TC_03: Login with invalid credentials", async () => {           
-        await pages.getLayoutOne().fillLoginForm(config.USERNAME, getTestData('INVALID_PASSWORD'))
+        await pages.getLayoutOne().fillLoginForm(config.USERNAME, getTestData('INVALID_PASSWORD', 1))
         await pages.getLayoutOne().clickLoginButton()
         await pages.getLayoutOne().validate.verifyInvalidLoginAlert()        
     })

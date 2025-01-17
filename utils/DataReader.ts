@@ -7,17 +7,17 @@ import fs from 'fs'
  * @param propertyName the name of the property to be read
  * @returns a string with the property value
  */
-export function getTestData(propertyName: string) : string{
-    var PropertiesReader = require('properties-reader');
-    var properties = PropertiesReader("./data/"+ getTestSuiteName() +".properties");
+export function getTestData(propertyName: string, id: number) : string {
+    const testDataFile = JSON.parse(fs.readFileSync("./data/"+ getTestClassName() +".json", 'utf-8'))
+    const testData = testDataFile.find( e => e.ID === id)
    
-    return properties.get(propertyName)
+    return testData[propertyName]
 }
 
 /**
  * @returns the name of the currently executed test file
  */
-function getTestSuiteName() {
+function getTestClassName() {
     var err = new Error();
     const testSuiteID = err.stack?.substring(err.stack?.lastIndexOf("TS_"),err.stack?.lastIndexOf(".test"))
     return testSuiteID;

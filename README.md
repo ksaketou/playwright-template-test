@@ -1,7 +1,10 @@
-# Test Automation Project using Playwright & Typescript
-<hr>
+## Test Automation Project using Playwright & Typescript
 
 This project contains an initial structure of a Test Automation project using Playwright, NodeJS and Typescript. It contains both UI and API tests and related action and validation methods.
+
+Website used for UI testing: https://trytestingthis.netlify.app/
+
+Website used for API testing: https://reqres.in
 
 ### Software Prerequisites
 
@@ -27,9 +30,9 @@ This project contains an initial structure of a Test Automation project using Pl
 
     The option `BROWSER` in the `.env` file represents the browser selected for the execution. Available options are: chrome, chromium, firefox and webkit.
 
-4. Set the number of parallel tests (if needed)
+    #### Parallel Execution
 
-    The option `WORKERS` in the `.env` file contains the number of parallel tests to run during the execution. The default value is set to 1 for sequential execution.
+    The option `WORKERS` in the `.env` file contains the number of parallel tests to run during the execution. The default value is set to 1 for sequential execution. Set this value accordingly depending on the maximum number of parallel tests to run.
 
 ### Executing Tests
 

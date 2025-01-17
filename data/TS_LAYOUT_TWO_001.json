@@ -1,0 +1,16 @@
+[
+    {
+        "ID": 1,
+        "FIRST_NAME": "Jane",
+        "LAST_NAME": "Doe",
+        "GENDER": "Female",
+        "DROPDOWN_SELECTION": "OPTION 3",
+        "MULTI_DROPDOWN_SELECTION": "option 2",
+        "FILENAME": "test.txt",
+        "TEXT": "This is a sample text for the textarea element."
+    },
+    {
+        "ID": 2,
+        "MULTI_DROPDOWN_SELECTION": "option 3"
+    }
+]

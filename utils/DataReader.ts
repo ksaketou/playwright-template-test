@@ -1,10 +1,11 @@
 import fs from 'fs'
 
 /**
- * This method reads the property file that matches the name of the test file that is
+ * This method reads the json file that matches the name of the test class that is
  * currently being executed and returns the value of the specified property.
  * 
  * @param propertyName the name of the property to be read
+ * @id the id of the group from where the property should be retrieved
  * @returns a string with the property value
  */
 export function getTestData(propertyName: string, id: number) : string {
@@ -15,7 +16,7 @@ export function getTestData(propertyName: string, id: number) : string {
 }
 
 /**
- * @returns the name of the currently executed test file
+ * @returns the name of the currently executed test class
  */
 function getTestClassName() {
     var err = new Error();

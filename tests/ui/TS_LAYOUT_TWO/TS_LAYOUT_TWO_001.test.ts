@@ -21,27 +21,27 @@ test.describe("TS_LAYOUT_TWO_001: Form @UI", () =>  {
     test("TC_001: Insert name and gender info", async () => {           
         await pages.getLayoutTwo().insertNameInfo()
 
-        await pages.getLayoutTwo().selectGender(getTestData('GENDER'))
-        await pages.getLayoutTwo().validate.verifyGenderRadioChecked(getTestData('GENDER'))
+        await pages.getLayoutTwo().selectGender(getTestData('GENDER', 1))
+        await pages.getLayoutTwo().validate.verifyGenderRadioChecked(getTestData('GENDER', 1))
     })
 
 
-    test("TC_002: Select one option from the dropdown", async () => {
+    test("TC_002: Select one option from the dropdown ", async () => {
         await pages.getLayoutTwo().selectDropdownOption(
-            getTestData('DROPDOWN_SELECTION'), layoutTwoElements.OPTION_DROPDOWN_SELECT)
+            getTestData('DROPDOWN_SELECTION', 1), layoutTwoElements.OPTION_DROPDOWN_SELECT)
         await pages.getLayoutTwo().validate.verifyDropdownSelectedOptionByValue(
-            getTestData('DROPDOWN_SELECTION'), layoutTwoElements.OPTION_DROPDOWN_SELECT)
+            getTestData('DROPDOWN_SELECTION', 1), layoutTwoElements.OPTION_DROPDOWN_SELECT)
     })
 
     test("TC_003: Select multiple options from the dropdown", async () => { // FAILS    
         await pages.getLayoutTwo().selectDropdownOption(
-            getTestData('MULTI_DROPDOWN_SELECTION1'), layoutTwoElements.OPTION_DROPDOWN_SELECT_MULTIPLE)
+            getTestData('MULTI_DROPDOWN_SELECTION', 1), layoutTwoElements.OPTION_DROPDOWN_SELECT_MULTIPLE)
         await pages.getLayoutTwo().selectDropdownOption(
-            getTestData('MULTI_DROPDOWN_SELECTION2'), layoutTwoElements.OPTION_DROPDOWN_SELECT_MULTIPLE)
+            getTestData('MULTI_DROPDOWN_SELECTION', 2), layoutTwoElements.OPTION_DROPDOWN_SELECT_MULTIPLE)
         await pages.getLayoutTwo().validate.verifyDropdownSelectedOptionByValue(
-            getTestData('MULTI_DROPDOWN_SELECTION1'), layoutTwoElements.OPTION_DROPDOWN_SELECT_MULTIPLE)
+            getTestData('MULTI_DROPDOWN_SELECTION', 1), layoutTwoElements.OPTION_DROPDOWN_SELECT_MULTIPLE)
         await pages.getLayoutTwo().validate.verifyDropdownSelectedOptionByValue(
-            getTestData('MULTI_DROPDOWN_SELECTION2'), layoutTwoElements.OPTION_DROPDOWN_SELECT_MULTIPLE)
+            getTestData('MULTI_DROPDOWN_SELECTION', 2), layoutTwoElements.OPTION_DROPDOWN_SELECT_MULTIPLE)
     })
 
     test("TC_004: Select checkboxes and fill out textarea", async () => {   // FAILS
@@ -50,13 +50,13 @@ test.describe("TS_LAYOUT_TWO_001: Form @UI", () =>  {
         await pages.getLayoutTwo().validate.verifyCheckboxSelected('option1')
         await pages.getLayoutTwo().validate.verifyCheckboxSelected('option2')
 
-        await pages.getLayoutTwo().fillTextarea(getTestData('TEXT'))
-        await pages.getLayoutTwo().validate.verifyLongMessageText(getTestData('TEXT'))
+        await pages.getLayoutTwo().fillTextarea(getTestData('TEXT', 1))
+        await pages.getLayoutTwo().validate.verifyLongMessageText(getTestData('TEXT', 1))
     })
 
     test("TC_005: Upload file and click submit", async () => {
-        await pages.getLayoutTwo().uploadFile(getTestData('FILENAME'))
-        await pages.getLayoutTwo().uploadFile(getTestData('FILENAME'))
+        await pages.getLayoutTwo().uploadFile(getTestData('FILENAME', 1))
+        await pages.getLayoutTwo().uploadFile(getTestData('FILENAME', 1))
 
         await pages.getLayoutTwo().clickSubmitBtn()
         await pages.getLayoutTwo().validate.verifySubmitBtnSelected()

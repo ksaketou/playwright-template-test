@@ -30,7 +30,7 @@ export class LayoutTwoValidations {
     }
 
     async verifyDropdownSelectedOptionByValue(selectedOption: string, select: Locator) {
-        await expect(await select.inputValue() === selectedOption).toBeTruthy()
+        expect(await select.inputValue() === selectedOption).toBeTruthy()
 
     }
 
@@ -40,7 +40,7 @@ export class LayoutTwoValidations {
 
     async verifyLongMessageText(expectedText: string) {
         console.log(await this.layoutTwoElements.LONG_MESSAGE_TEXTAREA.textContent())
-        await expect(await this.layoutTwoElements.LONG_MESSAGE_TEXTAREA.textContent() === expectedText).toBeTruthy()
+        expect(await this.layoutTwoElements.LONG_MESSAGE_TEXTAREA.textContent() === expectedText).toBeTruthy()
     }
 
     async verifySubmitBtnSelected() {

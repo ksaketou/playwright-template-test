@@ -21,7 +21,7 @@ export class LayoutOneValidations {
      async verifyAlertText() {
         this.page.on('dialog', async (dialog) => {
             if (dialog.type() === "confirm") {
-                await expect(dialog).toContain(getTestData('ALERT_TEXT'));
+                await expect(dialog).toContain(getTestData('ALERT_TEXT', 1));
                 await dialog.accept();  // Accepting the alert message
                 await this.assertion.isElementVisible(this.layoutOneElements.ALERT_CONFIRMATION_TEXT)
             } else {
@@ -47,11 +47,11 @@ export class LayoutOneValidations {
     async verifyInvalidLoginAlert() {
         this.page.on('dialog', async (dialog) => {
             if (dialog.type() === "confirm") {
-                await expect(dialog).toContain(getTestData('INVALID_LOGIN_ALERT_TEXT'));
+                expect(dialog).toContain(getTestData('INVALID_LOGIN_ALERT_TEXT', 1));
                 await dialog.accept();  // Accepting the alert message
             } else {
                 console.log('Could not find alert!');
-                await expect(true).toBeFalsy();  // Fail the test if no alert is found
+                expect(true).toBeFalsy();  // Fail the test if no alert is found
             }
         });
     }

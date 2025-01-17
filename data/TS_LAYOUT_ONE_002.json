@@ -1,0 +1,7 @@
+[
+    {
+        "ID": 1,
+        "INVALID_LOGIN_ALERT_TEXT": "Wrong credentials! Try again!",
+        "INVALID_PASSWORD": "invalid"
+    }
+]

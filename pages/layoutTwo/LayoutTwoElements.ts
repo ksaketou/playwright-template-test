@@ -11,7 +11,7 @@ export class LayoutTwoElements {
     public get FEMALE_RADIO_BTN() {return this.page.locator('css=#female');}
     public get OTHER_RADIO_BTN() {return this.page.locator('css=#other');}
 
-    public get OPTION_DROPDOWN_SELECT() {return this.page.locator('css=#option');}
+    public get OPTION_DROPDOWN_SELECT() {return this.page.locator('css=select#option');}
 
     public get OPTION_DROPDOWN_SELECT_MULTIPLE() {return this.page.locator('css=#owc');}
 

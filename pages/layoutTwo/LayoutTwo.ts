@@ -20,8 +20,8 @@ export class LayoutTwo {
     }
 
     async insertNameInfo() {
-        await this.action.input(this.layoutTwoElements.FIRST_NAME_INPUT, getTestData('FIRST_NAME'))
-        await this.action.input(this.layoutTwoElements.LAST_NAME_INPUT, getTestData('LAST_NAME'))
+        await this.action.input(this.layoutTwoElements.FIRST_NAME_INPUT, getTestData('FIRST_NAME', 1))
+        await this.action.input(this.layoutTwoElements.LAST_NAME_INPUT, getTestData('LAST_NAME', 1))
     }
 
     async selectGender(gender: String) {
@@ -44,7 +44,7 @@ export class LayoutTwo {
     }
 
     async selectCheckbox(option: string) {
-        await this.action.enableCheckbox(await this.layoutTwoElements.getCheckboxByText(option), true)
+        await this.action.enableCheckbox(this.layoutTwoElements.getCheckboxByText(option), true)
     }
 
     async uploadFile(filename: string) {

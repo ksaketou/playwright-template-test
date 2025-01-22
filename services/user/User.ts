@@ -19,8 +19,14 @@ export class User {
 
   async addUser(): Promise<APIResponse> {
 
+    // set headers
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    };
+
     const newUser = await this.service.post(getRestUrl(UserEndpoints.ADD_USER), 
-    loadJSONFile(getWSmessagesPath() + getTestData('ADD_USER_JSON_FILENAME')));
+    loadJSONFile(getWSmessagesPath() + getTestData('ADD_USER_FILENAME', 1)), headers);
 
     console.log("got response:", await newUser.json())
     return newUser
@@ -28,8 +34,14 @@ export class User {
 
   async updateUser(): Promise<APIResponse> {
 
+    // set headers
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    };
+
     const updateUser = await this.service.update(getRestUrl(UserEndpoints.UPDATE_USER), 
-    loadJSONFile(getWSmessagesPath() + getTestData('UPDATE_USER_JSON_FILENAME')));
+    loadJSONFile(getWSmessagesPath() + getTestData('UPDATE_USER_FILENAME', 1)), headers);
 
     console.log("got response:", await updateUser.json())
     return updateUser

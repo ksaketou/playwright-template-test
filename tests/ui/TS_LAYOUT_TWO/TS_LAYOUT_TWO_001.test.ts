@@ -33,7 +33,7 @@ test.describe("TS_LAYOUT_TWO_001: Form @UI", () =>  {
             getTestData('DROPDOWN_SELECTION', 1), layoutTwoElements.OPTION_DROPDOWN_SELECT)
     })
 
-    test("TC_003: Select multiple options from the dropdown", async () => { // FAILS    
+    test("TC_003: Select multiple options from the dropdown", async () => { // FAILS - two options cannot be selected
         await pages.getLayoutTwo().selectDropdownOption(
             getTestData('MULTI_DROPDOWN_SELECTION', 1), layoutTwoElements.OPTION_DROPDOWN_SELECT_MULTIPLE)
         await pages.getLayoutTwo().selectDropdownOption(
@@ -44,7 +44,7 @@ test.describe("TS_LAYOUT_TWO_001: Form @UI", () =>  {
             getTestData('MULTI_DROPDOWN_SELECTION', 2), layoutTwoElements.OPTION_DROPDOWN_SELECT_MULTIPLE)
     })
 
-    test("TC_004: Select checkboxes and fill out textarea", async () => {   // FAILS
+    test("TC_004: Select checkboxes and fill out textarea", async () => {   // FAILS - the old text remains in the DOM
         await pages.getLayoutTwo().selectCheckbox('option1')
         await pages.getLayoutTwo().selectCheckbox('option2')
         await pages.getLayoutTwo().validate.verifyCheckboxSelected('option1')

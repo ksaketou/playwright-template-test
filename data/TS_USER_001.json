@@ -1,10 +1,13 @@
 [
     {
         "ID": 1,
-        "EXPECTED_LAST_NAME": "Lawson",
-        "EXPECTED_JOB": "leader",
-        "EXPECTED_RESPONSE_BODY_UPDATED": "{\"name\":\"morpheus\",\"job\":\"automation engineer\",\"updatedAt\":",
-        "ADD_USER_FILENAME": "TC_WS_02_AddUser.json",
-        "UPDATE_USER_FILENAME": "TC_WS_03_UpdateUser.json"
+        "NAME": "Lawson",
+        "JOB": "leader",
+        "FILENAME": "TC_WS_02_AddUser.json"
+    },
+    {
+        "ID": 2,
+        "JOB": "automation engineer",
+        "FILENAME": "TC_WS_03_UpdateUser.json"
     }
 ]

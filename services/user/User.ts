@@ -1,7 +1,7 @@
 import { APIRequestContext, APIResponse } from "@playwright/test";
 import { UserEndpoints, getRestUrl } from "./UserEndpoints"
 import { getTestData, loadJSONFile } from '../../utils/DataReader'
-import { getWSmessagesPath } from "../../utils/Resources";
+import { getTemplatesPath } from "../../utils/Resources";
 import { Service } from "../../utils/common/Service";
 
 export class User {
@@ -26,7 +26,7 @@ export class User {
     };
 
     const newUser = await this.service.post(getRestUrl(UserEndpoints.ADD_USER), 
-    loadJSONFile(getWSmessagesPath() + getTestData('ADD_USER_FILENAME', 1)), headers);
+    loadJSONFile(getTemplatesPath() + getTestData('FILENAME', 1)), headers);
 
     console.log("got response:", await newUser.json())
     return newUser
@@ -41,7 +41,7 @@ export class User {
     };
 
     const updateUser = await this.service.update(getRestUrl(UserEndpoints.UPDATE_USER), 
-    loadJSONFile(getWSmessagesPath() + getTestData('UPDATE_USER_FILENAME', 1)), headers);
+    loadJSONFile(getTemplatesPath() + getTestData('FILENAME', 2)), headers);
 
     console.log("got response:", await updateUser.json())
     return updateUser

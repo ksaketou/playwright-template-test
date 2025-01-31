@@ -6,7 +6,7 @@ import { getTestData } from '../../utils/DataReader'
 
 test.describe.configure({ mode: 'parallel' });
 
-test.describe("TS_WS_XXX_001: Manage users @API", () => {
+test.describe("TS_USER_001: Manage users @API", () => {
   let user: User
   let rest = new RestValidations()
 
@@ -17,7 +17,7 @@ test.describe("TS_WS_XXX_001: Manage users @API", () => {
 
     // validate response
     rest.verifyStatusCode(users, HttpStatusCodes.OK)
-    rest.verifyResponseText(users, getTestData('EXPECTED_LAST_NAME', 1))
+    rest.verifyResponseText(users, getTestData('NAME', 1))
   });
 
   test('TC_002: ADD user', async ({request}) => {
@@ -27,7 +27,7 @@ test.describe("TS_WS_XXX_001: Manage users @API", () => {
 
     // validate response
     rest.verifyStatusCode(newUser, HttpStatusCodes.CREATED)
-    rest.verifyResponseText(newUser, getTestData('EXPECTED_JOB', 1))
+    rest.verifyResponseText(newUser, getTestData('JOB', 1))
 
   });
 
@@ -38,7 +38,7 @@ test.describe("TS_WS_XXX_001: Manage users @API", () => {
 
     // validate response
     rest.verifyStatusCode(updateUser, HttpStatusCodes.OK)
-    rest.verifyResponseText(updateUser, getTestData('EXPECTED_RESPONSE_BODY_UPDATED', 1))
+    rest.verifyResponseText(updateUser, getTestData('JOB', 2))
 
   });
 

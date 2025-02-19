@@ -8,6 +8,6 @@ export function getUploadPath() {
     return getAbsolutePath() + "/data/upload/"
 }
 
-export function getWSmessagesPath() {
-    return getAbsolutePath() + "/data/WSmessages/"
+export function getTemplatesPath() {
+    return getAbsolutePath() + "/data/templates/"
 }

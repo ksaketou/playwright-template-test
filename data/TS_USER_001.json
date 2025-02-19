@@ -1,0 +1,13 @@
+[
+    {
+        "ID": 1,
+        "NAME": "Lawson",
+        "JOB": "leader",
+        "FILENAME": "TC_WS_02_AddUser.json"
+    },
+    {
+        "ID": 2,
+        "JOB": "automation engineer",
+        "FILENAME": "TC_WS_03_UpdateUser.json"
+    }
+]

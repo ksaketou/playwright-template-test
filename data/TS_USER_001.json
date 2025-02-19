@@ -1,13 +1,16 @@
 [
     {
         "ID": 1,
-        "NAME": "Lawson",
-        "JOB": "leader",
-        "FILENAME": "TC_WS_02_AddUser.json"
+        "NAME": "Lawson"
     },
     {
         "ID": 2,
-        "JOB": "automation engineer",
-        "FILENAME": "TC_WS_03_UpdateUser.json"
+        "NAME": "morpheus",
+        "JOB": "leader"
+    },
+    {
+        "ID": 2,
+        "NAME": "morpheus",
+        "JOB": "automation engineer"
     }
 ]

@@ -9,7 +9,7 @@ import fs from 'fs'
  * @returns a string with the property value
  */
 export function getTestData(propertyName: string, id: number) : string {
-    const testDataFile = JSON.parse(fs.readFileSync("./data/"+ getTestClassName() +".json", 'utf-8'))
+    const testDataFile = loadJSONFile("./data/"+ getTestClassName() +".json")
     const testData = testDataFile.find( e => e.ID === id)
    
     return testData[propertyName]

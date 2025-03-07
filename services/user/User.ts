@@ -1,7 +1,6 @@
 import { APIRequestContext, APIResponse } from "@playwright/test";
 import { UserEndpoints, getRestUrl } from "./UserEndpoints"
-import { getTestData, loadJSONFile } from '../../utils/DataReader'
-import { getTemplatesPath } from "../../utils/Resources";
+import { getTestData, userTemplate } from '../../utils/DataReader'
 import { Service } from "../../utils/common/Service";
 
 export class User {
@@ -26,9 +25,10 @@ export class User {
     };
 
     const newUser = await this.service.post(getRestUrl(UserEndpoints.ADD_USER), 
-    loadJSONFile(getTemplatesPath() + getTestData('FILENAME', 1)), headers);
+    userTemplate(getTestData("NAME", 2), getTestData("JOB", 2)), headers);
 
-    console.log("got response:", await newUser.json())
+    console.log(userTemplate(getTestData("NAME", 2), getTestData("JOB", 2)))
+    console.log("got response:", newUser)
     return newUser
   }
 
@@ -41,9 +41,9 @@ export class User {
     };
 
     const updateUser = await this.service.update(getRestUrl(UserEndpoints.UPDATE_USER), 
-    loadJSONFile(getTemplatesPath() + getTestData('FILENAME', 2)), headers);
+    userTemplate(getTestData("NAME", 3), getTestData("JOB", 3)), headers);
 
-    console.log("got response:", await updateUser.json())
+    console.log("got response:", updateUser)
     return updateUser
   }
 

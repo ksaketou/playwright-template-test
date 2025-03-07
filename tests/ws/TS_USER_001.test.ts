@@ -27,7 +27,7 @@ test.describe("TS_USER_001: Manage users @API", () => {
 
     // validate response
     rest.verifyStatusCode(newUser, HttpStatusCodes.CREATED)
-    rest.verifyResponseText(newUser, getTestData('JOB', 1))
+    rest.verifyResponseText(newUser, getTestData('JOB', 2))
 
   });
 
@@ -38,7 +38,7 @@ test.describe("TS_USER_001: Manage users @API", () => {
 
     // validate response
     rest.verifyStatusCode(updateUser, HttpStatusCodes.OK)
-    rest.verifyResponseText(updateUser, getTestData('JOB', 2))
+    rest.verifyResponseText(updateUser, getTestData('JOB', 3))
 
   });
 

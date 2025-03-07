@@ -33,3 +33,10 @@ export function loadJSONFile(filepath: string) {
     var dataArray = JSON.parse(fs.readFileSync(filepath, 'utf-8'))
     return dataArray
 }
+
+/**
+ * The below arrow function is responsible for building the request body of adding/updating
+ * a user through API calls. It takes as parameters the name and job of the user reading them
+ * from the test data files. * 
+*/
+export var userTemplate = (name, job) => "{\"name\": \"" + name+"\",\"job\": \"" + job+"\"}"
